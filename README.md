@@ -9,12 +9,13 @@ O ComplianceAsCode visa melhorar o processo de desenvolvimento de software por m
 # Guia rápido
 Clonar o repositório abaixo:
 ```
-git fork https://github.com/SlackMaker/ComplianceAsCode.git
-cd terraform-openscap
+# git fork https://github.com/SlackMaker/ComplianceAsCode.git
+# cd terraform-openscap
 ```
 Execute diretamente os comandos a seguir (Terraform), onde a idéia é ele conversar com o Dockerfile e criar o conteiner chamado openscap:
 ```
-`# terraform init` - Inicializa o ambiente com o provider utilizado, em nosso caso `docker`, poderia ser o `aws` onde seria iniciado com o plugin para Amazon Web Services. 
+`# terraform init` - Inicializa o ambiente com o provider utilizado, em nosso caso `docker`,
+`poderia ser o `aws` onde seria iniciado com o plugin para Amazon Web Services.` 
 `# terraform plan` - Mostra o plano de execução do terraform.
 `# terraform apply` - Este comando cria e altera as Instâncias/Objetos no Provider de acordo com o seu terraform
 ```
@@ -24,4 +25,4 @@ Após de ser criada a imagem, com o último comando mencionado acima, entre na m
 `# docker run -it openscap:latest /bin/bash`
 `# oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_stig --report /tmp/report.html /usr/share/xml/scap/ssg/content/ssg-rhel7-ds.xml` 
 ```
-Feito isso ele o nosso estimado openscap irá começar escanear sua máquina, gerando um relatorio magnífico no diretório /tmp
+Feito isso, o nosso estimado amigo openscap irá começar escanear sua máquina, gerando um relatorio magnífico no diretório /tmp
